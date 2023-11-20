@@ -1,0 +1,42 @@
+version: '3'
+services:
+  master1:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    hostname: hadoop330
+    ports:
+      - "9000:9000"
+      - "9870:9870"
+      - "8088:8088"
+      - "16000:16000"
+      - "16010:16010"
+      - "16020:16020"
+      - "16030:16030"
+  master2:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+  worker1:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    environment:
+      - START_ZOOKEEPER=true 
+  worker2:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    environment:
+      - START_ZOOKEEPER=true 
+  worker3:
+    image: hadoop
+    stdin_open: true
+    tty: true
+    command: bash
+    environment:
+      - START_ZOOKEEPER=true 
