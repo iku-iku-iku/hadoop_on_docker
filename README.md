@@ -16,11 +16,13 @@
 
 ```shell
 # build image
-docker build -t hadoop .
+make build
 # start cluster
-docker-compose up -d
+make cluster
 # stop cluster
-docker-compose down
+make stop
+# run bash on master
+make run
 ```
 
 ## 3. 启动集群
